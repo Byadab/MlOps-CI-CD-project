@@ -3,8 +3,8 @@ numpy
 seaborn
 scikit-learn
 matplotlib
-catboost
 xgboost
 Flask
+catboost
 dill
 -e . #automaticaly trigers setup.py
