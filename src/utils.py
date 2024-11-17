@@ -1,6 +1,7 @@
 #will have all the common functunalities that the project is going to use
 import os
 import sys
+import pickle
 
 import pandas as pd
 import numpy as np
@@ -46,5 +47,16 @@ def evaluate_models(X_train, y_train, X_test, y_test, models, params):
     
     except Exception as e:
         raise CustomException(e,sys)
+    
+def load_object(file_path):
+    try:
+        with open(file_path, 'rb') as file_obj:
+            return pickle.load(file_obj)
+    except (FileNotFoundError, EOFError) as e:
+        print(f"Error: {e}")
+        raise
+    except pickle.UnpicklingError as e:
+        print("Error unpickling file. Ensure compatibility:", e)
+        raise
 
 
