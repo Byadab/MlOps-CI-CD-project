@@ -27,7 +27,7 @@ class modelTrainer:
     
     def initiate_model_trainer(self, train_array, test_array):
         try:
-            logging.info("Spliting training and test iunput data")
+            logging.info("Spliting training and test input data")
             X_train, y_train, X_test, y_test = (train_array[:,:-1],
                                                 train_array[:,-1],
                                                 test_array[:,:-1],
